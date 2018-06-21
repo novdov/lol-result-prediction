@@ -49,7 +49,7 @@ class GetGameInfo:
         game_df = pd.DataFrame(columns=['result', 'time', 'kill',
                                         'death', 'assist', 'kda',
                                         'p_kill', 'wards', 'cs', 'cs/m'])
-        res = requests.get(url_1)
+        res = requests.get(url)
         contents = BeautifulSoup(res.content, 'html.parser')
         game_info_list = contents.find_all('div', 'GameItemWrap')
 
@@ -58,12 +58,12 @@ class GetGameInfo:
             try:
                 stats = {
                     'result': re.sub('\s', '', info.find('div', 'GameResult').text),
-                    'time': text2time(info.find('div', 'GameLength').text),
+                    'time': self.text2time(info.find('div', 'GameLength').text),
                     'kill': info.find('span', 'Kill').text,
                     'death': info.find('span', 'Death').text,
                     'assist': info.find('span', 'Assist').text,
                     'kda': info.find('span', 'KDARatio').text[:-2],
-                    'p_kill': float(re.findall('[0-9]{2}', info.find('div', 'CKRate').text)[0]) / 100,
+                    'p_kill': float(re.findall('[0-9]+', info.find('div', 'CKRate').text)[0]) / 100,
                     'wards': info.find('span', 'wards vision').text,
                     'cs': info.find('span', 'CS tip').text.split()[0],
                     'cs/m': info.find('span', 'CS tip').text.split()[1][1:-1],
@@ -71,12 +71,12 @@ class GetGameInfo:
             except AttributeError:
                 stats = {
                     'result': re.sub('\s', '', info.find('div', 'GameResult').text),
-                    'time': text2time(info.find('div', 'GameLength').text),
+                    'time': self.text2time(info.find('div', 'GameLength').text),
                     'kill': info.find('span', 'Kill').text,
                     'death': info.find('span', 'Death').text,
                     'assist': info.find('span', 'Assist').text,
                     'kda': info.find('span', 'KDARatio').text[:-2],
-                    'p_kill': float(re.findall('[0-9]{2}', info.find('div', 'CKRate').text)[0]) / 100,
+                    'p_kill': float(re.findall('[0-9]+', info.find('div', 'CKRate').text)[0]) / 100,
                     'wards': 0,
                     'cs': info.find('span', 'CS tip').text.split()[0],
                     'cs/m': info.find('span', 'CS tip').text.split()[1][1:-1],
@@ -122,5 +122,5 @@ def main():
     game_df.to_csv(os.path.join(PATH, 'game_results.csv'), index=False)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
