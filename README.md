@@ -17,6 +17,3 @@
   - Classic ML (Logistic Regression, SVM ...)
   - Deep Learning (Tensorflow)
 
-## TODO
-- 크롤러 다중 url 대응
-- 솔로 랭크 게임 여부 확인
