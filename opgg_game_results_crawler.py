@@ -6,6 +6,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
+from util import text2time
+
 PATH = 'data'
 
 # TODO 1: 각 랭킹 페이지에 대응할 수 있도록 수정
@@ -13,14 +15,6 @@ PATH = 'data'
 class GetGameInfo:
     def __init__(self):
         self.__base_url = 'http://www.op.gg/ranking/ladder/page=1'
-
-    @staticmethod
-    def text2time(timestamp):
-        timestamp = timestamp[:-1]
-        time_split = timestamp.split('m ')
-
-        time_converted = float(time_split[0]) + (float(time_split[-1]) / 60)
-        return round(time_converted, 2)
 
     def _get_highest_summoner_urls(self):
         res = requests.get(self.__base_url)
@@ -45,7 +39,6 @@ class GetGameInfo:
         return highest_summoner_urls + summoner_urls
 
     def get_game_stats(self, url):
-
         game_df = pd.DataFrame(columns=['result', 'time', 'kill',
                                         'death', 'assist', 'kda',
                                         'p_kill', 'wards', 'cs', 'cs/m'])
@@ -54,11 +47,10 @@ class GetGameInfo:
         game_info_list = contents.find_all('div', 'GameItemWrap')
 
         for info in game_info_list:
-
             try:
                 stats = {
                     'result': re.sub('\s', '', info.find('div', 'GameResult').text),
-                    'time': self.text2time(info.find('div', 'GameLength').text),
+                    'time': text2time(info.find('div', 'GameLength').text),
                     'kill': info.find('span', 'Kill').text,
                     'death': info.find('span', 'Death').text,
                     'assist': info.find('span', 'Assist').text,
@@ -71,7 +63,7 @@ class GetGameInfo:
             except AttributeError:
                 stats = {
                     'result': re.sub('\s', '', info.find('div', 'GameResult').text),
-                    'time': self.text2time(info.find('div', 'GameLength').text),
+                    'time': text2time(info.find('div', 'GameLength').text),
                     'kill': info.find('span', 'Kill').text,
                     'death': info.find('span', 'Death').text,
                     'assist': info.find('span', 'Assist').text,
@@ -97,14 +89,12 @@ class GetGameInfo:
                 'cs': stats['cs'],
                 'cs/m': stats['cs/m'],
             }
-        game_df.iloc[:, 1:] = game_df.iloc[:, 1:].astype(float)
 
+        game_df.iloc[:, 1:] = game_df.iloc[:, 1:].astype(float)
         return game_df
 
     def get_game_stats_df(self):
-
         summoner_urls = self.get_summoner_urls()
-
         df_list = []
         for url in tqdm(summoner_urls):
             df = self.get_game_stats(url)
