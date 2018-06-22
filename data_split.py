@@ -18,7 +18,7 @@ class DataSplit:
 
 
 def main():
-    ds = DataSplit()
+    ds = DataSplit(PATH, file_name)
     train, test = ds.data_split()
     train.to_csv(os.path.join(PATH, 'train.csv'), index=False)
     test.to_csv(os.path.join(PATH, 'test.csv'), index=False)
