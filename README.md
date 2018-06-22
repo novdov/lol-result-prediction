@@ -15,7 +15,7 @@
   - 분당 cs
 
 ## Analysis & Modeling
-- Visualization (Matplotlib, Seaborn, Plotly)
+- Visualization
 - Classification
   - Classic ML (Logistic Regression, SVM ...)
   - Deep Learning (Tensorflow)
