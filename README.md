@@ -19,6 +19,5 @@
 - Classification
   - Random Forest
   - Logistic Regression
-
   - XGBoost
 
