@@ -17,6 +17,8 @@
 ## Analysis & Modeling
 - Visualization
 - Classification
-  - Classic ML (Logistic Regression, SVM ...)
-  - Deep Learning (Tensorflow)
+  - Random Forest
+  - Logistic Regression
+
+  - XGBoost
 
