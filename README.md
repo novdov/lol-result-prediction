@@ -16,7 +16,7 @@
 
 ## Analysis & Modeling
 
-<img src="/src/kda_results.png" width="400"> <img src="/src/heatmap.png" width="400">
+<img src="/src/kda_results.png" width="430"> <img src="/src/heatmap.png" width="430">
 
 - Visualization
 - Classification
