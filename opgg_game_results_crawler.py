@@ -53,7 +53,8 @@ class GetGameInfo(object):
 
         for info in game_info_list:
             game_type = info.find('div', 'GameType').text.strip()
-            if game_type == 'Ranked Solo':
+            game_result = info.find('div', 'GameResult').text.strip()
+            if game_type == 'Ranked Solo' and game_result != 'Remake':
                 try:
                     stats = {
                         'result': info.find('div', 'GameResult').text.strip(),
