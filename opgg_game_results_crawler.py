@@ -44,7 +44,7 @@ class GetGameInfo(object):
             return summoner_urls
 
     def get_game_stats(self, url):
-        game_df = pd.DataFrame(columns=['result', 'time', 'kill',
+        game_df = pd.DataFrame(columns=['result', 'tier', 'time', 'kill',
                                         'death', 'assist', 'kda',
                                         'p_kill', 'wards', 'cs', 'cs_m'])
         res = requests.get(url)
@@ -57,6 +57,7 @@ class GetGameInfo(object):
             if game_type == 'Ranked Solo' and game_result != 'Remake':
                 try:
                     stats = {
+                        'tier': contents.find('span', 'tierRank').text,
                         'result': info.find('div', 'GameResult').text.strip(),
                         'time': text2time(info.find('div', 'GameLength').text),
                         'kill': info.find('span', 'Kill').text,
@@ -70,6 +71,7 @@ class GetGameInfo(object):
                     }
                 except AttributeError:
                     stats = {
+                        'tier': contents.find('span', 'tierRank').text,
                         'result': info.find('div', 'GameResult').text.strip(),
                         'time': text2time(info.find('div', 'GameLength').text),
                         'kill': info.find('span', 'Kill').text,
