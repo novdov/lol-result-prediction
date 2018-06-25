@@ -57,8 +57,8 @@ class GetGameInfo(object):
             if game_type == 'Ranked Solo' and game_result != 'Remake':
                 try:
                     stats = {
-                        'tier': contents.find('span', 'tierRank').text,
                         'result': info.find('div', 'GameResult').text.strip(),
+                        'tier': contents.find('span', 'tierRank').text,
                         'time': text2time(info.find('div', 'GameLength').text),
                         'kill': info.find('span', 'Kill').text,
                         'death': info.find('span', 'Death').text,
@@ -71,8 +71,8 @@ class GetGameInfo(object):
                     }
                 except AttributeError:
                     stats = {
-                        'tier': contents.find('span', 'tierRank').text,
                         'result': info.find('div', 'GameResult').text.strip(),
+                        'tier': contents.find('span', 'tierRank').text,
                         'time': text2time(info.find('div', 'GameLength').text),
                         'kill': info.find('span', 'Kill').text,
                         'death': info.find('span', 'Death').text,
