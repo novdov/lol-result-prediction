@@ -89,6 +89,7 @@ class GetGameInfo(object):
 
                 game_df.loc[len(game_df)] = {
                     'result': stats['result'],
+                    'tier': stats['tier'],
                     'time': stats['time'],
                     'kill': stats['kill'],
                     'death': stats['death'],
@@ -100,7 +101,7 @@ class GetGameInfo(object):
                     'cs_m': stats['cs_m'],
                 }
 
-        game_df.iloc[:, 1:] = game_df.iloc[:, 1:].astype(float)
+        game_df.iloc[:, 2:] = game_df.iloc[:, 2:].astype(float)
         return game_df
 
     def get_game_stats_df(self):
@@ -118,12 +119,12 @@ def main():
     if not os.path.exists(os.path.join(PATH)):
         os.makedirs(PATH)
     game_df_list = []
-    for i in range(1, 10+1):
+    for i in range(1, 20+1):
         each_df = GetGameInfo(i).get_game_stats_df()
         game_df_list.append(each_df)
         del each_df
     game_df = pd.concat(game_df_list)
-    game_df.to_csv(os.path.join(PATH, 'game_results.csv'), index=False)
+    game_df.to_csv(os.path.join(PATH, 'game_results_tier.csv'), index=False)
 
 
 if __name__ == '__main__':
