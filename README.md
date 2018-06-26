@@ -41,8 +41,8 @@
 
 ## Those not analyzed
 - Position/Champion
-  - 게임을 2-3년 플레이 하지 않아 기존의 EU 메타 바텀 조합(원딜/서폿)이 흔들리는 상황에서 포지션 예측이 어려움
-  - 현 메타 설명글(OP.GG): [롤 현 메타에 대한 분석글](http://www.op.gg/forum/view/702498)
+  - Diffuculites with anayzing current meta which especially bottom is different wit previous EU meta
+  - Description of current meta: [롤 현 메타에 대한 분석글](http://www.op.gg/forum/view/702498)
 - Tier Differences
   - Current data are results of Challenger ~ Diamond 1
   - Comparison by Tier would be meaningful.
