@@ -1,10 +1,10 @@
-## Anaylsis for League of Legends Game Results
+## Anaylsis of League of Legends Matches
 
 ## Data
 - Recent 20 solo ranked games of  [OP.GG rank](http://www.op.gg/ranking/ladder/) 1~1,000 (Challenger ~ Diamond 1)
   - Collection Dates: 2018. 06. 22
   - Total Data: 17,172 (Victory/Defeat except regame)
-- 수집한 데이터
+- Data collected
   - Results (Victory/Defeat)
   - Play time
   - Kill/Death/Assist
