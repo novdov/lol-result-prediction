@@ -1,3 +1,5 @@
+# Sun-Woong KIM
+
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelBinarizer
@@ -5,6 +7,17 @@ from util import categorize_kda
 
 
 class PrepareData(object):
+    """
+    Prepare data for training.
+    
+    Args:
+        data: raw data with features and labels
+        
+    Attributes:
+        prepare_data: return data and labels (x, y).
+            data: float features + one-hot encoded feature (kda range)
+            labels: binarized labels (0/1)
+    """
     def __init__(self, data):
         self.data = data.copy()
 
