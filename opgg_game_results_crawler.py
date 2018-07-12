@@ -14,6 +14,16 @@ PATH = 'data'
 
 # TODO: class 내부에서 다중 url 처리하도록 코드 수정보완
 class GetGameInfo(object):
+    """
+    Crwal play data of each player from op.gg.
+    
+    Args:
+        page_num: Number of pages to be crawled.
+        
+    Attributes:
+        get_game_stats: Get data of recent 20 games from each player's page.
+        get_game_stats_df: Genrate pandas DataFrames for each players and concat them.
+    """
     def __init__(self, page_num):
         self.__base_url = 'http://www.op.gg/ranking/ladder/page={}'.format(page_num)
 
@@ -44,6 +54,25 @@ class GetGameInfo(object):
             return summoner_urls
 
     def get_game_stats(self, url):
+        """
+        Get data of recent 20 games from each player's page.
+        
+        Args:
+            url: Url of each player.
+        Return:
+            game_df: pandas DataFrame of player
+                columns:
+                    result: game result except 'Remake' (Victory / Defeat)
+                    tier: current tier of the players
+                    time: play time converted to minutes
+                    kill: how many player killed other player
+                    death: how many player dead
+                    assist: how many player assisted team
+                    kda: kill and assist ratio over death ((kill + assist) / death) 'Inf' if no death
+                    wards: number of wards player activated
+                    cs: total cs player got
+                    cs_m: number of cs per minutes player get                    
+        """
         game_df = pd.DataFrame(columns=['result', 'tier', 'time', 'kill',
                                         'death', 'assist', 'kda',
                                         'p_kill', 'wards', 'cs', 'cs_m'])
