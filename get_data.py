@@ -22,12 +22,18 @@ class PrepareData(object):
         self.data = data.copy()
 
     def _padding_inf(self):
+        """
+        Deal with inf in kda (Perfect kda)
+        """
         max_kda = max(self.data.loc[self.data['kda'] != np.inf]['kda'])
         idx = self.data['kda'] == np.inf
         self.data.loc[idx, 'kda'] = max_kda
         return self.data
 
     def _categorize_kda(self):
+        """
+        Apply categorize_kda function to 'kda' column and create new column named 'kda_range'
+        """
         self.data['kda_range'] = self.data['kda'].apply(categorize_kda)
         return self.data
 
