@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 PATH = 'data'
-file_name = 'game_results.csv'
+file_name = 'game_results_tier.csv'
 
 
 class DataSplit:
