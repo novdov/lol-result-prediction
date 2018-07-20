@@ -69,6 +69,7 @@ class GetGameInfo(object):
                     death: how many player dead
                     assist: how many player assisted team
                     kda: kill and assist ratio over death ((kill + assist) / death) 'Inf' if no death
+                    P_kill: contribution to total kill
                     wards: number of wards player activated
                     cs: total cs player got
                     cs_m: number of cs per minutes player get                    
