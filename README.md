@@ -16,7 +16,7 @@
 
 ## Analysis & Modeling
 
-<img src="/src/kda_results.png" width="430"> <img src="/src/heatmap.png" width="430">
+<img src="/src/pyplot_kda_range.png" width="430"> <img src="/src/pyplot_heatmap.png" width="430">
 
 - Visualization
 - Classification
