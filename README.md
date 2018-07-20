@@ -54,9 +54,6 @@ Libraries for Plots
 - Position/Champion
   - Diffuculites with anayzing current meta which especially bottom is different wit previous EU meta
   - Description of current meta: [롤 현 메타에 대한 분석글](http://www.op.gg/forum/view/702498)
-- Tier Differences
-  - Current data are results of Challenger ~ Diamond 1
-  - Comparison by Tier would be meaningful.
 - Team Data
   - Global Gold
   - Global CS
