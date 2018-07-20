@@ -16,6 +16,12 @@
 
 ## Analysis & Modeling
 
+```
+Libraries for Plots
+- seaborn
+- plot.ly
+```
+
 <img src="/src/pyplot_kda_range.png" width="430"> <img src="/src/pyplot_tier.png" width="430">
 
 <img src="/src/kda_tier.png" width="430"> <img src="/src/pkill_tier.png" width="430">
