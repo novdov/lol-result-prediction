@@ -17,6 +17,8 @@
 
 ## Analysis & Modeling
 
+[EDA Notebook showing plotly plots (eda_tier.ipynb)](http://nbviewer.jupyter.org/github/novdov/lol-result-prediction/blob/master/eda_tier.ipynb)
+
 ```
 Libraries for Plots
 - seaborn
