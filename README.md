@@ -1,7 +1,7 @@
 ## Anaylsis of League of Legends Matches
 
 ## Data
-- Recent 20 solo ranked games of  [OP.GG rank](http://www.op.gg/ranking/ladder/) 1~1,000 (Challenger ~ Diamond 1)
+- Recent 20 solo ranked games of  [OP.GG rank](http://www.op.gg/ranking/ladder/) 1~1,000 (Challenger ~ Diamond 2)
   - Collection Dates: 2018. 06. 22
   - Total Data: 17,172 (Victory/Defeat except regame)
 - Data collected
