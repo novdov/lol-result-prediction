@@ -19,17 +19,13 @@
 
 [EDA Notebook showing plotly plots (eda_tier.ipynb)](http://nbviewer.jupyter.org/github/novdov/lol-result-prediction/blob/master/eda_tier.ipynb)
 
-```
-Libraries for Plots
-- seaborn
-- plot.ly
-```
-
 <img src="/src/pyplot_kda_range.png" width="430"> <img src="/src/pyplot_tier.png" width="430">
 
 <img src="/src/kda_tier.png" width="430"> <img src="/src/pkill_tier.png" width="430">
 
 - Visualization
+  - Relationships between Victory/Defeat and other variables
+  - seaborn & plot.ly used
 - Classification
   - Random Forest
   - Logistic Regression
