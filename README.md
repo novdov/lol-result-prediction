@@ -44,7 +44,7 @@
     - How much players contribute to total kill (kill/assist)
     - KDA ratio over 3: High probability for Victory when KDA exceed 3
 
-<img src="/src/rf_fi.png" width="600">
+<img src="/src/rf_fi_plotly.png" width="700">
 
 ## Those not analyzed
 - Position/Champion
