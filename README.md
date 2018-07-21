@@ -1,5 +1,9 @@
 ## Anaylsis of League of Legends Matches
 
+### Notebooks on nbviewer (for plotly plots)
+- [eda_tier.ipynb](http://nbviewer.jupyter.org/github/novdov/lol-result-prediction/blob/master/eda_tier.ipynb)
+- [modeling.ipynb](http://nbviewer.jupyter.org/github/novdov/lol-result-prediction/blob/master/modeling.ipynb)
+
 ## Data
 - Recent 20 solo ranked games of  [OP.GG rank](http://www.op.gg/ranking/ladder/) 1~1,000 (Master ~ Diamond 2)
   - Collection Dates: 2018. 06. 22/26(with tier)
@@ -16,8 +20,6 @@
   - CS per minutes
 
 ## Analysis & Modeling
-
-[EDA Notebook showing plotly plots (eda_tier.ipynb)](http://nbviewer.jupyter.org/github/novdov/lol-result-prediction/blob/master/eda_tier.ipynb)
 
 <img src="/src/pyplot_kda_range.png" width="430"> <img src="/src/pyplot_tier.png" width="430">
 
