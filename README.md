@@ -25,10 +25,10 @@
 
 <img src="/src/kda_tier.png" width="430"> <img src="/src/pkill_tier.png" width="430">
 
-- Visualization
+- Visualization (with/without tier)
   - Relationships between Victory/Defeat and other variables
   - seaborn & plot.ly used
-- Classification
+- Classification (without tier)
   - Random Forest
   - Logistic Regression
   - XGBoost
